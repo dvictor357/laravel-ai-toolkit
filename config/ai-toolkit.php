@@ -153,4 +153,61 @@ return [
         'prefix' => env('AI_ROUTES_PREFIX', 'ai'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Filament Admin Panel Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Configure the Filament Admin Panel integration for AI Toolkit.
+    |
+    */
+
+    'filament' => [
+        'enabled' => env('AI_TOOLKIT_FILAMENT_ENABLED', true),
+        'auto_discover' => env('AI_TOOLKIT_FILAMENT_AUTO_DISCOVER', true),
+        'panel_path' => env('AI_TOOLKIT_FILAMENT_PATH', 'admin'),
+        'middleware' => [
+            'auth' => true,
+            'verified' => false,
+        ],
+        'resources' => [
+            'ai_provider' => [
+                'enabled' => true,
+                'model' => \AIToolkit\AIToolkit\Support\AIProviderConfiguration::class,
+            ],
+        ],
+        'pages' => [
+            'ai_chat_dashboard' => [
+                'enabled' => true,
+            ],
+        ],
+        'widgets' => [
+            'usage_stats' => [
+                'enabled' => true,
+                'cache_duration' => 300, // 5 minutes
+            ],
+        ],
+        'features' => [
+            'real_time_chat' => env('AI_TOOLKIT_FILAMENT_REALTIME_CHAT', true),
+            'usage_analytics' => env('AI_TOOLKIT_FILAMENT_USAGE_ANALYTICS', true),
+            'provider_testing' => env('AI_TOOLKIT_FILAMENT_PROVIDER_TESTING', true),
+        ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Package Integration Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Configure how this package integrates with other systems.
+    |
+    */
+
+    'integration' => [
+        'broadcast_events' => env('AI_TOOLKIT_BROADCAST_EVENTS', true),
+        'dispatch_jobs' => env('AI_TOOLKIT_DISPATCH_JOBS', true),
+        'monitoring' => env('AI_TOOLKIT_MONITORING', true),
+        'notifications' => env('AI_TOOLKIT_NOTIFICATIONS', true),
+    ],
+
 ];

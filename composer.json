@@ -1,12 +1,13 @@
 {
   "name": "aitoolkit/laravel-ai-toolkit",
   "description": "A professional, production-ready Laravel package for integrating multiple AI providers with advanced features like async\nprocessing, real-time streaming, intelligent caching, and error handling.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "require": {
     "php": "^8.3",
     "laravel/framework": "^11.0|^12.0",
     "openai-php/client": "v0.17.0",
-    "anthropic-ai/sdk": "v0.3.0"
+    "anthropic-ai/sdk": "v0.3.0",
+    "filament/filament": "^4.0"
   },
   "require-dev": {
     "pestphp/pest": "^2.0",
