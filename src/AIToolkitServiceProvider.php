@@ -23,8 +23,7 @@ class AIToolkitServiceProvider extends ServiceProvider
 
         // Publish migration for AI provider configurations
         $this->publishes([
-            __DIR__.'/../database/migrations/2024_11_01_000000_create_ai_provider_configurations_table.php'
-                => database_path('migrations/2024_11_01_000000_create_ai_provider_configurations_table.php'),
+            __DIR__.'/../database/migrations/2024_11_01_000000_create_ai_provider_configurations_table.php' => database_path('migrations/2024_11_01_000000_create_ai_provider_configurations_table.php'),
         ], 'ai-toolkit-migrations');
 
         // Load routes if configured
@@ -51,7 +50,7 @@ class AIToolkitServiceProvider extends ServiceProvider
                 ->where('is_enabled', true)
                 ->first();
 
-            if (!$defaultProvider) {
+            if (! $defaultProvider) {
                 // Fallback to config if no default found in DB
                 $provider = config('ai.default_provider', 'openai');
             } else {

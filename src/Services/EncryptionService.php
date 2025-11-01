@@ -30,7 +30,8 @@ class EncryptionService
             if (strlen($decrypted) <= 4) {
                 return str_repeat('*', strlen($decrypted));
             }
-            return str_repeat('*', strlen($decrypted) - 4) . substr($decrypted, -4);
+
+            return str_repeat('*', strlen($decrypted) - 4).substr($decrypted, -4);
         } catch (\Exception $e) {
             return 'Invalid key';
         }
@@ -43,6 +44,7 @@ class EncryptionService
     {
         try {
             decrypt($value);
+
             return true;
         } catch (\Exception $e) {
             return false;

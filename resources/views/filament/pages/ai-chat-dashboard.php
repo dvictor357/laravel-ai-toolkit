@@ -1,4 +1,4 @@
-<?php use Illuminate\Support\Str; ?>
+<?php ?>
 <!DOCTYPE html>
 <html>
 <head>

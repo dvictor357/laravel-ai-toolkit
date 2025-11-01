@@ -2,19 +2,20 @@
 
 namespace Database\Seeders;
 
-use AIToolkit\AIToolkit\Support\AIProviderConfiguration;
 use AIToolkit\AIToolkit\Services\EncryptionService;
+use AIToolkit\AIToolkit\Support\AIProviderConfiguration;
 use Illuminate\Database\Seeder;
 
 class AIProviderSeeder extends Seeder
 {
     public function run(): void
     {
-        $encryptionService = new EncryptionService();
+        $encryptionService = new EncryptionService;
 
         // Check if providers already exist
         if (AIProviderConfiguration::count() > 0) {
             $this->command->info('AI providers already exist. Skipping seeding.');
+
             return;
         }
 

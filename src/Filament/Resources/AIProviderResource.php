@@ -3,8 +3,8 @@
 namespace AIToolkit\AIToolkit\Filament\Resources;
 
 use AIToolkit\AIToolkit\Filament\Resources\AIProviderResource\Pages;
-use AIToolkit\AIToolkit\Support\AIProviderConfiguration;
 use AIToolkit\AIToolkit\Services\EncryptionService;
+use AIToolkit\AIToolkit\Support\AIProviderConfiguration;
 use Filament\Forms;
 use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
@@ -159,6 +159,7 @@ class AIProviderResource extends Resource
                             return 'Not set';
                         }
                         $encryptionService = app(EncryptionService::class);
+
                         return $encryptionService->maskApiKey($state);
                     })
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -259,11 +260,11 @@ class AIProviderResource extends Resource
      */
     public static function mutateFormDataBeforeSave(array $data): array
     {
-        if (isset($data['api_key']) && !empty($data['api_key'])) {
+        if (isset($data['api_key']) && ! empty($data['api_key'])) {
             $encryptionService = app(EncryptionService::class);
 
             // Only encrypt if not already encrypted
-            if (!$encryptionService->isEncrypted($data['api_key'])) {
+            if (! $encryptionService->isEncrypted($data['api_key'])) {
                 $data['api_key'] = $encryptionService->encryptApiKey($data['api_key']);
             }
         }
