@@ -544,4 +544,50 @@ This package is open-sourced software licensed under the [MIT license](LICENSE).
 
 ---
 
+## 🎛️ Filament Admin Panel Integration
+
+The Laravel AI Toolkit includes optional **Filament Admin Panel** integration for a beautiful web interface to manage AI providers, monitor usage, and test AI operations.
+
+### Quick Setup
+
+```bash
+# 1. Install Filament (if not already installed)
+composer require filament/filament:"^4.0"
+
+# 2. Publish and run migration
+php artisan vendor:publish --provider="AIToolkit\AIToolkit\AIToolkitServiceProvider" --tag="ai-toolkit-migrations"
+php artisan migrate
+
+# 3. Seed initial providers (optional)
+php artisan db:seed --class="AIToolkit\AIToolkit\Database\Seeders\AIProviderSeeder"
+
+# 4. Access the admin panel at /admin
+```
+
+### Features
+
+- ✅ **AI Provider Management** - Configure multiple providers (OpenAI, Anthropic, Groq)
+- ✅ **Real-time Chat Dashboard** - Interactive AI testing interface
+- ✅ **Usage Analytics** - Monitor requests, cache hit rates, response times
+- ✅ **Provider Testing** - Built-in connection testing for all providers
+- ✅ **Encrypted Storage** - API keys encrypted in database
+- ✅ **Dynamic Configuration** - Database-driven provider management
+
+### Database-Driven Architecture
+
+The Filament integration uses a **database-first approach**:
+
+1. **Providers stored in database** (not config files)
+2. **Encrypted API keys** for security
+3. **Dynamic configuration** via admin UI
+4. **Seeder creates initial providers** from `.env` values
+
+### Documentation
+
+📖 **Full documentation available in:** [`docs/FILAMENT_INTEGRATION.md`](docs/FILAMENT_INTEGRATION.md)
+
+Includes detailed setup, configuration, troubleshooting, and advanced usage examples.
+
+---
+
 **Made with ❤️ for the Laravel community**
