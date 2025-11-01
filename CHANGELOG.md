@@ -5,6 +5,37 @@ All notable changes to Laravel AI Toolkit will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2025-11-01
+
+### Added
+
+#### FilamentPHP Admin Panel Integration
+
+- **Database-Driven Architecture**
+    - Secure provider credential storage with encryption
+    - Eloquent models for AI provider management
+    - Migration-based database schema
+
+- **Filament Dashboard Components**
+    - AI Chat management dashboard
+    - Provider configuration interface
+    - Clean, optimized UI using Filament components
+    - Real-time chat monitoring
+
+- **Filament Resources**
+    - Provider resource management
+    - Encrypted credential handling
+    - Form validation and data management
+
+### Changed
+
+- **Code Quality**
+    - Improved code consistency and readability
+    - Cleaned up and optimized dashboard implementation
+    - Replaced custom HTML with standard Filament components
+
+---
+
 ## [1.0.0] - 2025-11-01
 
 ### Added
@@ -223,7 +254,16 @@ release.
 
 ### Roadmap
 
-#### v1.1.0 (Planned)
+#### v1.1.0 (Finished)
+
+- [x] FilamentPHP Admin Panel Integration
+- [x] Database-driven architecture with encryption
+- [x] AI Chat Dashboard with Filament components
+- [x] Provider management via Filament resources
+- [x] Clean up and optimize dashboard UI
+- [x] Replace custom HTML with Filament components
+
+#### v1.2.0 (Planned)
 
 - [ ] Additional providers (Google Gemini, Azure OpenAI)
 - [ ] Advanced rate limiting strategies
@@ -231,7 +271,7 @@ release.
 - [ ] Performance monitoring dashboard
 - [ ] Caching tiers (L1, L2, L3)
 
-#### v1.2.0 (Planned)
+#### v1.3.0 (Planned)
 
 - [ ] Conversation/chat history management
 - [ ] Multi-turn conversation support
