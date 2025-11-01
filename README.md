@@ -533,7 +533,6 @@ This package is open-sourced software licensed under the [MIT license](LICENSE).
 
 ## 🆘 Support
 
-- 📧 Email: dvictor3579@gmail.com
 - 🐛 Issues: [GitHub Issues](https://github.com/dvictor357/laravel-ai-toolkit/issues)
 
 ## 🙏 Acknowledgments
